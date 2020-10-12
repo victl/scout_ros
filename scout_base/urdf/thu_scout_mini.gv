@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"imu" [label="imu"];
+"ipc" [label="ipc"];
+"kinect" [label="kinect"];
+"velodyne" [label="velodyne"];
+"zed" [label="zed"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "imu_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"imu_joint" -> "imu"
+"base_link" -> "ipc_joint" [label="xyz: 0 0 0.02 \nrpy: 0 -0 0"]
+"ipc_joint" -> "ipc"
+"base_link" -> "kinect_joint" [label="xyz: 0.1085 0 0.335 \nrpy: 0 -0 0"]
+"kinect_joint" -> "kinect"
+"base_link" -> "velodyne_joint" [label="xyz: 0.02 0 0.39 \nrpy: 0 -0 0"]
+"velodyne_joint" -> "velodyne"
+"base_link" -> "zed_joint" [label="xyz: 0.24 0 0.235 \nrpy: 0 -0 0"]
+"zed_joint" -> "zed"
+}
